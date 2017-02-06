@@ -13,31 +13,30 @@ class Results extends Component {
   }
 
   renderResults() {
-    console.clear();
-    this.props.movies.map((movie) => {
-      console.log(movie);
+    if (this.props.movies.length > 0) {
       return (
         <div>
-          <p>bbbbbbb</p>
-          <Tile
-            title={movie.original_title}
-            year={movie.release_date}
-            poster={"https://image.tmdb.org/t/p/w500/" + movie.poster_path}
-            synopsis={movie.overview}
-            genre={movie.genres}
-          />
+          {this.props.movies.map((movie) => {
+            return (
+              <Tile
+                key={movie.id}
+                title={movie.original_title}
+                year={movie.release_date}
+                poster={"https://image.tmdb.org/t/p/w500/" + movie.poster_path}
+                synopsis={movie.overview}
+                genre={movie.genres}
+              />
+            )
+          })}
         </div>
-      );
-    });
+      )
+    }
   }
 
   render() {
-    // console.log(this.props.movies);
     return(
       <div>
-        <p>aaaaaaa</p>
         {this.renderResults()}
-        <p>ccccccc</p>
       </div>
     )
   }
