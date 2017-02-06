@@ -1,0 +1,44 @@
+.tile {
+  box-shadow: 2px 2px 4px 5px #ccc;
+  float: left;
+  font-family: helvetica;
+  font-size: 0.7em;
+  height: 300px;
+  margin-top: 30px;
+  margin-left: 30px;
+  width: 300px; }
+  .tile .header {
+    display: inline-block;
+    padding-left: 10px;
+    padding-top: 10px;
+    vertical-align: top;
+    width: 60%; }
+    .tile .header .title, .tile .header .year {
+      display: inline-block;
+      margin-bottom: 3px;
+      margin-top: 0; }
+    .tile .header .title {
+      margin-right: 5px; }
+    .tile .header .year:before {
+      content: "("; }
+    .tile .header .year:after {
+      content: ")"; }
+  .tile .poster {
+    display: inline;
+    float: right;
+    padding-right: 10px;
+    padding-top: 10px;
+    width: 33%; }
+  .tile .synopsis {
+    clear: right;
+    display: block;
+    padding: 10px 10px;
+    text-align: justify; }
+
+.searchBar {
+  display: block;
+  font-size: 1.5em;
+  margin: auto;
+  width: 66%; }
+
+/*# sourceMappingURL=style.css.map */

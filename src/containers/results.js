@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getMovie } from '../actions/index';
+import SearchBar from './search_bar';
 import Tile from '../components/tile';
 
 class Results extends Component {
@@ -36,6 +37,7 @@ class Results extends Component {
   render() {
     return(
       <div>
+        <SearchBar />
         {this.renderResults()}
       </div>
     )
