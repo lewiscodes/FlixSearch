@@ -6,25 +6,38 @@ import Tile from '../components/tile';
 
 class Results extends Component {
   componentWillMount() {
-    this.props.getMovie(550);
+
+    this.props.movieIdList.map((movieID) => {
+      this.props.getMovie(movieID);
+    });
   }
 
   renderResults() {
-    return(
-      <Tile
-        title={this.props.movie.original_title}
-        year={this.props.movie.release_date}
-        poster={"https://image.tmdb.org/t/p/w500/" + this.props.movie.poster_path}
-        synopsis={this.props.movie.overview}
-        genre={this.props.movie.genres}
-      />
-    )
+    console.clear();
+    this.props.movies.map((movie) => {
+      console.log(movie);
+      return (
+        <div>
+          <p>bbbbbbb</p>
+          <Tile
+            title={movie.original_title}
+            year={movie.release_date}
+            poster={"https://image.tmdb.org/t/p/w500/" + movie.poster_path}
+            synopsis={movie.overview}
+            genre={movie.genres}
+          />
+        </div>
+      );
+    });
   }
 
   render() {
+    // console.log(this.props.movies);
     return(
       <div>
+        <p>aaaaaaa</p>
         {this.renderResults()}
+        <p>ccccccc</p>
       </div>
     )
   }
@@ -35,7 +48,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 function mapStateToProps(state) {
-  return { movie: state.movie.movie}
+  return { movies: state.moviesReducer.movies, movieIdList: state.moviesReducer.movieIdList}
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Results);
