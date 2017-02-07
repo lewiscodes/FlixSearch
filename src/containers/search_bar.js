@@ -20,4 +20,12 @@ class SearchBar extends Component {
   }
 }
 
-export default connect(null, null)(SearchBar)
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ getSearch }, dispatch)
+}
+
+function mapStateToProps(state) {
+  return { results: state.searchReducer.results }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBar)

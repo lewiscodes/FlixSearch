@@ -49,7 +49,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 function mapStateToProps(state) {
-  return { movies: state.moviesReducer.movies, movieIdList: state.moviesReducer.movieIdList}
+  return { movies: state.moviesReducer.movies, movieIdList: state.moviesReducer.movieIdList }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Results);
