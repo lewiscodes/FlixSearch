@@ -6,7 +6,8 @@ import SearchBar from './search_bar';
 import Tile from '../components/tile';
 
 class Results extends Component {
-  componentWillMount() {
+
+  fetchResults() {
 
     this.props.movieIdList.map((movieID) => {
       this.props.getMovie(movieID);
@@ -37,7 +38,7 @@ class Results extends Component {
   render() {
     return(
       <div>
-        <SearchBar />
+        <SearchBar fetchResults={this.fetchResults.bind(this)}/>
         {this.renderResults()}
       </div>
     )
@@ -49,7 +50,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 function mapStateToProps(state) {
-  return { movies: state.moviesReducer.movies, movieIdList: state.moviesReducer.movieIdList }
+  return { movies: state.moviesReducer.movies, movieIdList: state.resultsReducer.results }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Results);

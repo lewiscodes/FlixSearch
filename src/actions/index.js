@@ -8,17 +8,18 @@ const API_KEY = "?api_key=84106750d8a60bce5c3b42e20e3b6f46";
 
 export function getSearch(searchString) {
   searchString = searchString.replace(" ","+");
-  console.log(ROOT_URL + "search/movie" + API_KEY + "&query=" + searchString);
 
   return dispatch => {
-    console.log("dispatch");
     dispatch({type: GET_SEARCH});
 
     return fetch(ROOT_URL + "search/movie" + API_KEY + "&query=" + searchString).then((response) => response.json()).then((payload) => {
-      console.log(payload);
+      var array = [];
+      payload.results.map((result) => {
+        array.push(result.id);
+      });
       dispatch({
         type: RECEIVED_SEARCH,
-        payload: payload
+        payload: array
       });
     });
   }
