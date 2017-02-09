@@ -5,7 +5,8 @@ const INITIAL_STATE = { certificates: [] };
 export default function(state = INITIAL_STATE, action) {
   switch(action.type) {
     case ADD_CERTIFICATE:
-      return {...state, [action.payload].concat(state.certificates)};
+      return {...state, certificates: [action.payload].concat(state.certificates)};
+      return state;
     case REMOVE_CERTIFICATE:
       return state;
     default:
