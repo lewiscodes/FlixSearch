@@ -1,9 +1,8 @@
 import { GET_SEARCH, RECEIVED_SEARCH } from '../actions/index';
 
-const INITIAL_STATE = { results: [] };
+const INITIAL_STATE = { results: [101, 102, 103, 104] };
 
 export default function(state = INITIAL_STATE, action) {
-  // console.log(action.type);
   switch(action.type) {
     case GET_SEARCH:
       return state;

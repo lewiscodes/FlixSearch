@@ -5,10 +5,10 @@ const INITIAL_STATE = { certificates: [] };
 export default function(state = INITIAL_STATE, action) {
   switch(action.type) {
     case ADD_CERTIFICATE:
-      return {...state, certificates: [action.payload].concat(state.certificates)};
+      return {...state, certificates: state.certificates.concat([action.payload])};
       return state;
     case REMOVE_CERTIFICATE:
-      return state;
+      return {...state, certificates: state.certificates.filter((item) => {return item !== action.payload})}
     default:
       return state;
   }

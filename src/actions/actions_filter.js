@@ -8,9 +8,9 @@ export function addCertificate(certificate) {
   }
 }
 
-export function removeCertificate(index) {
+export function removeCertificate(certificate) {
   return {
     type: REMOVE_CERTIFICATE,
-    payload: index
+    payload: certificate
   }
 }

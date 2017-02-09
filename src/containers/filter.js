@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { addCertificate } from '../actions/actions_filter';
+import { addCertificate, removeCertificate } from '../actions/actions_filter';
 
 class Filter extends Component {
   constructor(props) {
@@ -10,9 +10,17 @@ class Filter extends Component {
     this.state = { availableCertificates: ["U", "PG", "12A", "15", "18"] }
   }
 
+  renderGeneres() {
+
+  }
+
   certificateEvent(event, certificate) {
-    console.log(event.target.checked);
-    console.log(certificate);
+
+    if (event.target.checked === true) {
+      this.props.addCertificate(certificate);
+    } else {
+      this.props.removeCertificate(certificate);
+    }
   }
 
   renderCertificates() {
@@ -42,7 +50,7 @@ class Filter extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ addCertificate }, dispatch)
+  return bindActionCreators({ addCertificate, removeCertificate }, dispatch)
 }
 
 function mapStateToProps(state) {
