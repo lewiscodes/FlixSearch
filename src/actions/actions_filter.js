@@ -1,32 +1,32 @@
-export const ADD_CERTIFICATE = "ADD_CERTIFICATE";
-export const REMOVE_CERTIFICATE = "REMOVE_CERTIFICATE";
-export const ADD_GENRE = "ADD_GENRE";
-export const REMOVE_GENRE = "REMOVE_GENRE";
+export const ADD_SELECTED_CERTIFICATE = "ADD_SELECTED_CERTIFICATE";
+export const REMOVE_SELECTED_CERTIFICATE = "REMOVE_SELECTED_CERTIFICATE";
+export const ADD_SELECTED_GENRE = "ADD_SELECTED_GENRE";
+export const REMOVE_SELECTED_GENRE = "REMOVE_SELECTED_GENRE";
 
-export function addGenre(genre) {
+export function addSelectedGenre(genre) {
   return {
-    type: ADD_GENRE,
+    type: ADD_SELECTED_GENRE,
     payload: genre
   }
 }
 
-export function removeGenre(genre) {
+export function removeSelectedGenre(genre) {
   return {
-    type: REMOVE_GENRE,
+    type: REMOVE_SELECTED_GENRE,
     payload: genre
   }
 }
 
-export function addCertificate(certificate) {
+export function addSelectedCertificate(certificate) {
   return {
-    type: ADD_CERTIFICATE,
+    type: ADD_SELECTED_CERTIFICATE,
     payload: certificate
   }
 }
 
-export function removeCertificate(certificate) {
+export function removeSelectedCertificate(certificate) {
   return {
-    type: REMOVE_CERTIFICATE,
+    type: REMOVE_SELECTED_CERTIFICATE,
     payload: certificate
   }
 }

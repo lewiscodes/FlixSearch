@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { addCertificate, removeCertificate, addGenre, removeGenre } from '../actions/actions_filter';
+import { addSelectedCertificate, removeSelectedCertificate, addSelectedGenre, removeSelectedGenre } from '../actions/actions_filter';
 
 class Filter extends Component {
   constructor(props) {
@@ -14,9 +14,9 @@ class Filter extends Component {
 
   genreEvent(event, genre) {
     if (event.target.checked === true) {
-      this.props.addGenre(genre);
+      this.props.addSelectedGenre(genre);
     } else {
-      this.props.removeGenre(genre);
+      this.props.removeSelectedGenre(genre);
     }
   }
 
@@ -40,9 +40,9 @@ class Filter extends Component {
   certificateEvent(event, certificate) {
 
     if (event.target.checked === true) {
-      this.props.addCertificate(certificate);
+      this.props.addSelectedCertificate(certificate);
     } else {
-      this.props.removeCertificate(certificate);
+      this.props.removeSelectedCertificate(certificate);
     }
   }
 
@@ -74,11 +74,11 @@ class Filter extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ addCertificate, removeCertificate, addGenre, removeGenre }, dispatch)
+  return bindActionCreators({ addSelectedCertificate, removeSelectedCertificate, addSelectedGenre, removeSelectedGenre }, dispatch)
 }
 
 function mapStateToProps(state) {
-  return { certificates: state.filterReducer.certificates, genres: state.filterReducer.genres }
+  return { selectedCertificates: state.filterReducer.selectedCertificates, selectedGenres: state.filterReducer.selectedGenres }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Filter);
