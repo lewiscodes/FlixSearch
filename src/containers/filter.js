@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { addSelectedCertificate, removeSelectedCertificate, addSelectedGenre, removeSelectedGenre } from '../actions/actions_filter';
+import { getCertificates, addSelectedCertificate, removeSelectedCertificate, addSelectedGenre, removeSelectedGenre } from '../actions/actions_filter';
 
 class Filter extends Component {
   constructor(props) {
     super(props)
 
-    this.state = { availableCertificates: ["U", "PG", "12A", "15", "18"],
-                    availableGenres: ["Action", "Adventure", "Animation", "Comedy", "Crime", "Documentary", "Drama", "Family", "Fantasy", "History", "Horror", "Music", "Mystery", "Romance", "Science Fiction", "TV Movie", "Thriller", "War", "Western"]
-                  }
+    this.state = {availableGenres: ["Action", "Adventure", "Animation", "Comedy", "Crime", "Documentary", "Drama", "Family", "Fantasy", "History", "Horror", "Music", "Mystery", "Romance", "Science Fiction", "TV Movie", "Thriller", "War", "Western"]}
+  }
+
+  componentWillMount() {
+    this.props.getCertificates();
   }
 
   genreEvent(event, genre) {
@@ -26,11 +28,14 @@ class Filter extends Component {
         <h2>Genre</h2>
         {this.state.availableGenres.map((genre) => {
           return (
-            <input
-              key={genre}
-              type="checkbox"
-              onChange={(event) => {this.genreEvent(event, genre)}}>
-            {genre}</input>
+            <div key={genre}>
+              <label>{genre}</label>
+              <input
+                type="checkbox"
+                onChange={(event) => {this.genreEvent(event, genre)}}
+              />
+
+            </div>
           )
         })}
       </form>
@@ -46,17 +51,19 @@ class Filter extends Component {
     }
   }
 
-  renderCertificates() {
+  renderCertificates () {
     return (
       <form>
-      <h2>Certificate</h2>
-        {this.state.availableCertificates.map((certificate) => {
+        <h2>Certficate</h2>
+        {this.props.allCertificates.map((item) => {
           return (
-            <input
-              key={certificate}
-              type="checkbox"
-              onChange={(event) => {this.certificateEvent(event, certificate)}}>
-            {certificate}</input>
+            <div key={item.certification}>
+              <label>{item.certification}</label>
+              <input
+                type="checkbox"
+                onChange={(event) => {this.certificateEvent(event, certificate)}}
+              />
+            </div>
           )
         })}
       </form>
@@ -74,11 +81,11 @@ class Filter extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ addSelectedCertificate, removeSelectedCertificate, addSelectedGenre, removeSelectedGenre }, dispatch)
+  return bindActionCreators({ getCertificates, addSelectedCertificate, removeSelectedCertificate, addSelectedGenre, removeSelectedGenre }, dispatch)
 }
 
 function mapStateToProps(state) {
-  return { selectedCertificates: state.filterReducer.selectedCertificates, selectedGenres: state.filterReducer.selectedGenres }
+  return { allCertificates:state.filterReducer.allCertificates, selectedCertificates: state.filterReducer.selectedCertificates, selectedGenres: state.filterReducer.selectedGenres }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Filter);
