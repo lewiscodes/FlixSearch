@@ -61,7 +61,7 @@ class Filter extends Component {
               <label>{item.certification}</label>
               <input
                 type="checkbox"
-                onChange={(event) => {this.certificateEvent(event, certificate)}}
+                onChange={(event) => {this.certificateEvent(event, item.certification)}}
               />
             </div>
           )
