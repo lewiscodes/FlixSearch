@@ -1,7 +1,6 @@
 export const GET_CERTIFICATES = "GET_CERTIFICATES";
 export const RECEIVED_CERTIFICATES = "RECEIVED_CERTIFICATES";
 export const ADD_SELECTED_CERTIFICATE = "ADD_SELECTED_CERTIFICATE";
-export const REMOVE_SELECTED_CERTIFICATE = "REMOVE_SELECTED_CERTIFICATE";
 export const GET_GENRES = "GET_GENRES";
 export const RECEIVED_GENRES = "RECEIVED_GENRES";
 export const ADD_SELECTED_GENRE = "ADD_SELECTED_GENRE";
@@ -61,13 +60,6 @@ export function getCertificates() {
 export function addSelectedCertificate(certificate) {
   return {
     type: ADD_SELECTED_CERTIFICATE,
-    payload: certificate
-  }
-}
-
-export function removeSelectedCertificate(certificate) {
-  return {
-    type: REMOVE_SELECTED_CERTIFICATE,
     payload: certificate
   }
 }

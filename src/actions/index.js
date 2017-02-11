@@ -6,20 +6,19 @@ export const RECEIVED_SEARCH = "RECEIVED_SEARCH";
 const ROOT_URL = "https://api.themoviedb.org/3/";
 const API_KEY = "?api_key=84106750d8a60bce5c3b42e20e3b6f46";
 
-export function getSearch(searchString) {
-  searchString = searchString.replace(" ","+");
+export function getSearch(certificate, genres) {
+
+  var URL = ROOT_URL + "discover/movie" + API_KEY + "&language=en-US&certification_country=GB";
+  URL = URL + "&certification=" + certificate + "&include_adult=false&include_video=false&page=1";
+  URL = URL + "&with_genres=" + genres;
 
   return dispatch => {
     dispatch({type: GET_SEARCH});
 
-    return fetch(ROOT_URL + "search/movie" + API_KEY + "&query=" + searchString).then((response) => response.json()).then((payload) => {
-      var array = [];
-      payload.results.map((result) => {
-        array.push(result.id);
-      });
+    return fetch(URL).then((response) => response.json()).then((payload) => {
       dispatch({
         type: RECEIVED_SEARCH,
-        payload: array
+        payload: payload
       });
     });
   }

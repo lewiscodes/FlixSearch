@@ -4,11 +4,6 @@ import { bindActionCreators } from 'redux';
 import { getCertificates, addSelectedCertificate, removeSelectedCertificate, getGenres, addSelectedGenre, removeSelectedGenre } from '../actions/actions_filter';
 
 class Filter extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {availableGenres: ["Action", "Adventure", "Animation", "Comedy", "Crime", "Documentary", "Drama", "Family", "Fantasy", "History", "Horror", "Music", "Mystery", "Romance", "Science Fiction", "TV Movie", "Thriller", "War", "Western"]}
-  }
 
   componentWillMount() {
     this.props.getCertificates();
@@ -48,8 +43,6 @@ class Filter extends Component {
 
     if (event.target.checked === true) {
       this.props.addSelectedCertificate(certificate);
-    } else {
-      this.props.removeSelectedCertificate(certificate);
     }
   }
 
@@ -63,7 +56,8 @@ class Filter extends Component {
               <div key={item.certification}>
                 <label>{item.certification}</label>
                 <input
-                  type="checkbox"
+                  type="radio"
+                  name="certificate"
                   onChange={(event) => {this.certificateEvent(event, item.certification)}}
                 />
               </div>
@@ -74,11 +68,18 @@ class Filter extends Component {
     }
   }
 
+  submitSearch() {
+
+  }
+
   render() {
     return (
       <div>
         {this.renderCertificates()}
         {this.renderGenres()}
+        <button
+        onClick={this.submitSearch()}>
+        Search</button>
       </div>
     )
   }

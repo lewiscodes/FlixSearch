@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { getSearch } from '../actions/index';
+// import { getSearch } from '../actions/index';
 import Lodash from 'lodash';
 
 class SearchBar extends Component {
@@ -9,7 +9,7 @@ class SearchBar extends Component {
   search(event) {
     const delayEvent = _.debounce((term) => {
       // this.props.getSearch(event.target.value);
-      this.props.getSearch(term);
+      // this.props.getSearch(term);
       this.props.fetchResults();
     }, 5000);
 
@@ -28,7 +28,8 @@ class SearchBar extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ getSearch }, dispatch)
+  // return bindActionCreators({ getSearch }, dispatch)
+  return bindActionCreators({ }, dispatch)
 }
 
 function mapStateToProps(state) {
