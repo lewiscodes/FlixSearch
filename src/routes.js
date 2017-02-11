@@ -8,7 +8,6 @@ import Filter from './containers/filter';
 
 export default (
   <Route path="/" component={App} >
-    <IndexRoute component={Results} />
-    <Route path="filter" component={Filter} />
+    <IndexRoute component={Filter} />
   </Route>
 );

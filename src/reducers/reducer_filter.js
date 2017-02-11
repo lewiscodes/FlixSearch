@@ -1,6 +1,6 @@
-import { GET_CERTIFICATES, RECEIVED_CERTIFICATES, ADD_SELECTED_CERTIFICATE, REMOVE_SELECTED_CERTIFICATE, GET_GENRES, RECEIVED_GENRES, ADD_SELECTED_GENRE, REMOVE_SELECTED_GENRE } from '../actions/actions_filter';
+import { GET_CERTIFICATES, RECEIVED_CERTIFICATES, ADD_SELECTED_CERTIFICATE, GET_GENRES, RECEIVED_GENRES, ADD_SELECTED_GENRE, REMOVE_SELECTED_GENRE } from '../actions/actions_filter';
 
-const INITIAL_STATE = { allCertificates: [], selectedCertificates: null, allGenres: [], selectedGenres: [] };
+const INITIAL_STATE = { allCertificates: [], selectedCertificate: null, allGenres: [], selectedGenres: [] };
 
 export default function(state = INITIAL_STATE, action) {
   switch(action.type) {
@@ -9,7 +9,7 @@ export default function(state = INITIAL_STATE, action) {
     case RECEIVED_CERTIFICATES:
       return {...state, allCertificates: action.payload};
     case ADD_SELECTED_CERTIFICATE:
-      return {...state, selectedCertificates: action.payload};
+      return {...state, selectedCertificate: action.payload};
     case GET_GENRES:
       return state;
     case RECEIVED_GENRES:

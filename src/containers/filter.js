@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { getCertificates, addSelectedCertificate, removeSelectedCertificate, getGenres, addSelectedGenre, removeSelectedGenre } from '../actions/actions_filter';
+import { getCertificates, addSelectedCertificate, getGenres, addSelectedGenre, removeSelectedGenre } from '../actions/actions_filter';
+import { getSearch } from '../actions/index';
+import Results from './results';
 
 class Filter extends Component {
 
@@ -10,11 +12,11 @@ class Filter extends Component {
     this.props.getGenres();
   }
 
-  genreEvent(event, genre) {
+  genreEvent(event, genreID) {
     if (event.target.checked === true) {
-      this.props.addSelectedGenre(genre);
+      this.props.addSelectedGenre(genreID);
     } else {
-      this.props.removeSelectedGenre(genre);
+      this.props.removeSelectedGenre(genreID);
     }
   }
 
@@ -25,11 +27,12 @@ class Filter extends Component {
           <h2>Genre</h2>
             {this.props.allGenres.genres.map((item) => {
               return (
-                <div key={item.name}>
+                <div key={item.id}>
                   <label>{item.name}</label>
                   <input
                     type="checkbox"
-                    onChange={(event) => {this.genreEvent(event, item.name)}}
+                    value={item.id}
+                    onChange={(event) => {this.genreEvent(event, item.id)}}
                   />
                 </div>
               )
@@ -40,7 +43,6 @@ class Filter extends Component {
   }
 
   certificateEvent(event, certificate) {
-
     if (event.target.checked === true) {
       this.props.addSelectedCertificate(certificate);
     }
@@ -61,7 +63,7 @@ class Filter extends Component {
                   onChange={(event) => {this.certificateEvent(event, item.certification)}}
                 />
               </div>
-            )
+            );
           })}
         </form>
       )
@@ -69,7 +71,10 @@ class Filter extends Component {
   }
 
   submitSearch() {
+    var certificate = this.props.selectedCertificate;
+    var genres = this.props.selectedGenres.join();
 
+    this.props.getSearch(certificate, genres);
   }
 
   render() {
@@ -78,19 +83,20 @@ class Filter extends Component {
         {this.renderCertificates()}
         {this.renderGenres()}
         <button
-        onClick={this.submitSearch()}>
+        onClick={this.submitSearch.bind(this)}>
         Search</button>
+        <Results />
       </div>
     )
   }
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ getCertificates, addSelectedCertificate, removeSelectedCertificate, getGenres, addSelectedGenre, removeSelectedGenre }, dispatch)
+  return bindActionCreators({ getCertificates, addSelectedCertificate, getGenres, addSelectedGenre, removeSelectedGenre, getSearch }, dispatch)
 }
 
 function mapStateToProps(state) {
-  return { allCertificates:state.filterReducer.allCertificates, selectedCertificates: state.filterReducer.selectedCertificates, allGenres: state.filterReducer.allGenres, electedGenres: state.filterReducer.selectedGenres }
+  return { allCertificates:state.filterReducer.allCertificates, selectedCertificate: state.filterReducer.selectedCertificate, allGenres: state.filterReducer.allGenres, selectedGenres: state.filterReducer.selectedGenres }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Filter);

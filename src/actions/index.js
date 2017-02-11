@@ -16,9 +16,17 @@ export function getSearch(certificate, genres) {
     dispatch({type: GET_SEARCH});
 
     return fetch(URL).then((response) => response.json()).then((payload) => {
+      var newPayload = {totalPages: null, currentPage: null, results: []}
+      newPayload.totalPages = payload.total_pages;
+      newPayload.currentPage = payload.page;
+
+      payload.results.map((item) => {
+        newPayload.results.push(item.id);
+      })
+
       dispatch({
         type: RECEIVED_SEARCH,
-        payload: payload
+        payload: newPayload
       });
     });
   }
