@@ -1,0 +1,101 @@
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css");
+
+.filter {
+  .certificates {
+    width: 30%;
+    margin: auto;
+
+    .certificate {
+      height: 40px;
+
+      input[type="radio"] {
+        display: none;
+        &:checked + label span.radio::after {
+          left: -27px;
+          background-color: #26ca28;
+        }
+      }
+
+      label {
+        position: relative;
+
+        span {
+          &::before,
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+          }
+
+          &.radio {
+            &:hover {
+              cursor: pointer;
+            }
+
+            &::before {
+              left: -52px;
+              width: 45px;
+              height: 25px;
+              background-color: #A8AAC1;
+              border-radius: 50px;
+            }
+
+            &::after {
+              left: -49px;
+              width: 17px;
+              height: 17px;
+              border-radius: 10px;
+              background-color: #6C788A;
+              transition: left .25s, background-color .25s;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .genres {
+    width: 30%;
+    margin: auto;
+
+    .genre {
+      width: 40px;
+    	height: 40px;
+    	background: #A8AAC1;
+    	margin: 20px -50px;
+    	border-radius: 100%;
+    	position: relative;
+    	box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+
+      label {
+      	display: block;
+      	width: 30px;
+      	height: 30px;
+      	border-radius: 100px;
+      	transition: all .5s ease;
+      	cursor: pointer;
+      	position: absolute;
+      	top: 5px;
+      	left: 5px;
+      	z-index: 1;
+      	background: #6C788A;
+      	box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+
+        span {
+          margin-left: 45px;
+          white-space: nowrap;
+        }
+      }
+
+      input[type=checkbox] {
+        display: none;
+      }
+
+      input[type=checkbox]:checked + label {
+      	background: #26ca28;
+      }
+    }
+  }
+}

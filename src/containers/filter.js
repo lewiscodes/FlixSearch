@@ -23,21 +23,22 @@ class Filter extends Component {
   renderGenres() {
     if (this.props.allGenres.genres) {
       return (
-        <form>
-          <h2>Genre</h2>
-            {this.props.allGenres.genres.map((item) => {
-              return (
-                <div key={item.id}>
-                  <label>{item.name}</label>
-                  <input
-                    type="checkbox"
-                    value={item.id}
-                    onChange={(event) => {this.genreEvent(event, item.id)}}
-                  />
-                </div>
-              )
-            })}
-        </form>
+        <div className="genres">
+          {this.props.allGenres.genres.map((item) => {
+            return (
+              <div className="genre" key={item.id}>
+                <input
+                  type="checkbox"
+                  name="genre"
+                  id={item.name}
+                  value={item.id}
+                  onChange={(event) => {this.genreEvent(event, item.id)}}
+                />
+                <label htmlFor={item.name}><span className="checkbox">{item.name}</span></label>
+              </div>
+            )
+          })}
+        </div>
       )
     }
   }
@@ -51,21 +52,30 @@ class Filter extends Component {
   renderCertificates () {
     if (this.props.allCertificates) {
       return (
-        <form>
-          <h2>Certficate</h2>
+        <div className="certificates">
+          <div className="certificate">
+            <input
+              type="radio"
+              name="certificate"
+              id="All"
+              onChange={(event) => {this.certificateEvent(event, "All")}}
+            />
+            <label htmlFor="All"><span className="radio">All</span></label>
+          </div>
           {this.props.allCertificates.map((item) => {
             return (
-              <div key={item.certification}>
-                <label>{item.certification}</label>
+              <div className="certificate" key={item.certification}>
                 <input
                   type="radio"
                   name="certificate"
+                  id={item.certification}
                   onChange={(event) => {this.certificateEvent(event, item.certification)}}
                 />
+                <label htmlFor={item.certification}><span className="radio">{item.certification}</span></label>
               </div>
             );
           })}
-        </form>
+        </div>
       )
     }
   }
@@ -79,12 +89,14 @@ class Filter extends Component {
 
   render() {
     return (
-      <div>
+      <div className="filter">
         {this.renderCertificates()}
         {this.renderGenres()}
-        <button
-        onClick={this.submitSearch.bind(this)}>
-        Search</button>
+        <div className="searchButton">
+          <button
+            onClick={this.submitSearch.bind(this)}>
+          Search</button>
+        </div>
         <Results />
       </div>
     )
