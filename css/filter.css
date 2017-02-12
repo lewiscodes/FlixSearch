@@ -1,67 +1,61 @@
-@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css");
-.filter .certificates {
-  width: 30%;
-  margin: auto; }
-  .filter .certificates .certificate {
-    height: 40px; }
-    .filter .certificates .certificate input[type="radio"] {
-      display: none; }
-      .filter .certificates .certificate input[type="radio"]:checked + label span.radio::after {
-        left: -27px;
-        background-color: #26ca28; }
-    .filter .certificates .certificate label {
-      position: relative; }
-      .filter .certificates .certificate label span::before, .filter .certificates .certificate label span::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        margin: auto; }
-      .filter .certificates .certificate label span.radio:hover {
-        cursor: pointer; }
-      .filter .certificates .certificate label span.radio::before {
-        left: -52px;
-        width: 45px;
-        height: 25px;
-        background-color: #A8AAC1;
-        border-radius: 50px; }
-      .filter .certificates .certificate label span.radio::after {
-        left: -49px;
-        width: 17px;
-        height: 17px;
-        border-radius: 10px;
-        background-color: #6C788A;
-        transition: left .25s, background-color .25s; }
-.filter .genres {
-  width: 30%;
-  margin: auto; }
-  .filter .genres .genre {
-    width: 40px;
-    height: 40px;
-    background: #A8AAC1;
-    margin: 20px -50px;
-    border-radius: 100%;
-    position: relative;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5); }
-    .filter .genres .genre label {
+.filter .certificates .certificate {
+  height: 40px; }
+  .filter .certificates .certificate input[type="radio"] {
+    display: none; }
+    .filter .certificates .certificate input[type="radio"]:checked + .radioButton .radioButtonSelect {
+      left: 24px;
+      background-color: #26ca28; }
+  .filter .certificates .certificate .radioButton {
+    width: 45px;
+    height: 25px;
+    background-color: #A8AAC1;
+    border-radius: 50px;
+    display: inline-block; }
+    .filter .certificates .certificate .radioButton .radioButtonSelect {
+      position: relative;
+      top: 4px;
+      left: 3px;
+      width: 17px;
+      height: 17px;
       display: block;
-      width: 30px;
-      height: 30px;
-      border-radius: 100px;
-      transition: all .5s ease;
-      cursor: pointer;
-      position: absolute;
-      top: 5px;
-      left: 5px;
-      z-index: 1;
-      background: #6C788A;
-      box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.5); }
-      .filter .genres .genre label span {
-        margin-left: 45px;
-        white-space: nowrap; }
-    .filter .genres .genre input[type=checkbox] {
-      display: none; }
-    .filter .genres .genre input[type=checkbox]:checked + label {
-      background: #26ca28; }
+      border-radius: 10px;
+      background-color: #6C788A;
+      transition: left .25s, background-color .25s; }
+  .filter .certificates .certificate label {
+    cursor: pointer; }
+  .filter .certificates .certificate .label {
+    vertical-align: super;
+    margin-left: 5px; }
+.filter .genres .genre input[type="checkbox"] {
+  display: none; }
+  .filter .genres .genre input[type="checkbox"]:checked + .checkbox .checkboxSelect {
+    background-color: #26ca28; }
+.filter .genres .genre .checkbox {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: #A8AAC1;
+  border-radius: 100%;
+  position: relative;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5); }
+  .filter .genres .genre .checkbox .checkboxSelect {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    transition: all .5s ease;
+    cursor: pointer;
+    position: relative;
+    top: 5px;
+    left: 5px;
+    z-index: 2;
+    background: #6C788A;
+    box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.5); }
+.filter .genres .genre label {
+  cursor: pointer; }
+.filter .genres .genre .label {
+  position: relative;
+  top: -25px;
+  right: -50px; }
 
 /*# sourceMappingURL=filter.css.map */

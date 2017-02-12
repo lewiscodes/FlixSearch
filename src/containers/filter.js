@@ -34,7 +34,10 @@ class Filter extends Component {
                   value={item.id}
                   onChange={(event) => {this.genreEvent(event, item.id)}}
                 />
-                <label htmlFor={item.name}><span className="checkbox">{item.name}</span></label>
+                <label className="checkbox" htmlFor={item.name}>
+                  <label className="checkboxSelect" htmlFor={item.name}></label>
+                  <label className="label" htmlFor={item.name}>{item.name}</label>
+                </label>
               </div>
             )
           })}
@@ -60,7 +63,10 @@ class Filter extends Component {
               id="All"
               onChange={(event) => {this.certificateEvent(event, "All")}}
             />
-            <label htmlFor="All"><span className="radio">All</span></label>
+            <label htmlFor="All" className="radioButton">
+              <label htmlFor="All" className="radioButtonSelect"></label>
+            </label>
+            <label className="label" htmlFor="All">All</label>
           </div>
           {this.props.allCertificates.map((item) => {
             return (
@@ -71,7 +77,10 @@ class Filter extends Component {
                   id={item.certification}
                   onChange={(event) => {this.certificateEvent(event, item.certification)}}
                 />
-                <label htmlFor={item.certification}><span className="radio">{item.certification}</span></label>
+                <label htmlFor={item.certification} className="radioButton">
+                  <label htmlFor={item.certification} className="radioButtonSelect"></label>
+                </label>
+                <label className="label" htmlFor={item.certification}>{item.certification}</label>
               </div>
             );
           })}
