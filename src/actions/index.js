@@ -36,11 +36,11 @@ export function getMovie(movieID) {
   return dispatch => {
     dispatch({type: GET_MOVIE});
 
-    return fetch(ROOT_URL + "movie/" + movieID + API_KEY).then((response) => response.json()).then((payload) => {
+    return fetch(ROOT_URL + "movie/" + movieID + API_KEY).then((response) => response.json().then((payload) => {
       dispatch({
         type: RECEIVED_MOVIE,
         payload: payload
       });
-    });
+    }))
   }
 }

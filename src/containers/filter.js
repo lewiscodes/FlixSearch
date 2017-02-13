@@ -96,6 +96,10 @@ class Filter extends Component {
     this.props.getSearch(certificate, genres);
   }
 
+  getNextMovie() {
+    console.log("aaaa");
+  }
+
   render() {
     return (
       <div className="filter">
@@ -103,8 +107,13 @@ class Filter extends Component {
         {this.renderGenres()}
         <div className="searchButton">
           <button
-            onClick={this.submitSearch()}>
+            onClick={this.submitSearch}>
           Search</button>
+        </div>
+        <div>
+          <button
+            onClick={this.getNextMovie}
+            >Next</button>
         </div>
         <Results />
       </div>
@@ -117,7 +126,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 function mapStateToProps(state) {
-  return { allCertificates:state.filterReducer.allCertificates, selectedCertificate: state.filterReducer.selectedCertificate, allGenres: state.filterReducer.allGenres, selectedGenres: state.filterReducer.selectedGenres }
+  return { allCertificates: state.filterReducer.allCertificates, selectedCertificate: state.filterReducer.selectedCertificate, allGenres: state.filterReducer.allGenres, selectedGenres: state.filterReducer.selectedGenres }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Filter);

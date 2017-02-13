@@ -7,10 +7,6 @@ import Tile from '../components/tile';
 class Results extends Component {
 
   componentWillMount() {
-    this.fetchResults();
-  }
-
-  fetchResults = () => {
     this.props.movieIdList.map((movieID) => {
       this.props.getMovie(movieID);
     });
