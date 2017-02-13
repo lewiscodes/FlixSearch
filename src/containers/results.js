@@ -1,21 +1,31 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { getMovie } from '../actions/index';
+import { getMovie, updateMovieIndex } from '../actions/index';
 import Tile from '../components/tile';
 
 class Results extends Component {
 
   componentWillMount() {
-    this.props.movieIdList.map((movieID) => {
-      this.props.getMovie(movieID);
-    });
+    this.props.getMovie(this.props.movieIdList[0]);
+    this.props.updateMovieIndex(1);
+  }
+
+  getNextMovie = () => {
+    var nextMovieId = this.props.lastMovieArrayIndex;
+    this.props.getMovie(this.props.movieIdList[nextMovieId]);
+    this.props.updateMovieIndex(nextMovieId+1);
   }
 
   renderResults = () => {
     if (this.props.movies.length > 0) {
       return (
         <div>
+          <div>
+            <button
+              onClick={this.getNextMovie}
+              >Next</button>
+          </div>
           {this.props.movies.map((movie) => {
             return (
               <Tile
@@ -43,11 +53,11 @@ class Results extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ getMovie }, dispatch)
+  return bindActionCreators({ getMovie, updateMovieIndex }, dispatch)
 }
 
 function mapStateToProps(state) {
-  return { movies: state.moviesReducer.movies, movieIdList: state.resultsReducer.results }
+  return { movies: state.moviesReducer.movies, movieIdList: state.resultsReducer.results, lastMovieArrayIndex: state.resultsReducer.lastMovieArrayIndex }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Results);

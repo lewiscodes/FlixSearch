@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getCertificates, addSelectedCertificate, getGenres, addSelectedGenre, removeSelectedGenre } from '../actions/actions_filter';
-import { getSearch } from '../actions/index';
+import { getSearch, updateMovieIndex } from '../actions/index';
 import Results from './results';
 
 class Filter extends Component {
@@ -96,10 +96,6 @@ class Filter extends Component {
     this.props.getSearch(certificate, genres);
   }
 
-  getNextMovie() {
-    console.log("aaaa");
-  }
-
   render() {
     return (
       <div className="filter">
@@ -109,11 +105,6 @@ class Filter extends Component {
           <button
             onClick={this.submitSearch}>
           Search</button>
-        </div>
-        <div>
-          <button
-            onClick={this.getNextMovie}
-            >Next</button>
         </div>
         <Results />
       </div>

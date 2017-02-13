@@ -2,6 +2,7 @@ export const GET_MOVIE = "GET_MOVIE";
 export const RECEIVED_MOVIE = "RECEIVED_MOVIE";
 export const GET_SEARCH = "GET_SEARCH";
 export const RECEIVED_SEARCH = "RECEIVED_SEARCH";
+export const UPDATE_MOVIE_INDEX = "UPDATE_MOVIE_INDEX";
 
 const ROOT_URL = "https://api.themoviedb.org/3/";
 const API_KEY = "?api_key=84106750d8a60bce5c3b42e20e3b6f46";
@@ -29,6 +30,13 @@ export function getSearch(certificate, genres) {
         payload: newPayload
       });
     });
+  }
+}
+
+export function updateMovieIndex(index) {
+  return {
+    type: UPDATE_MOVIE_INDEX,
+    payload: index
   }
 }
 
