@@ -10,13 +10,13 @@ class Results extends Component {
     this.fetchResults();
   }
 
-  fetchResults() {
+  fetchResults = () => {
     this.props.movieIdList.map((movieID) => {
       this.props.getMovie(movieID);
     });
   }
 
-  renderResults() {
+  renderResults = () => {
     if (this.props.movies.length > 0) {
       return (
         <div>

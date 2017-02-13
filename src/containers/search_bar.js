@@ -6,7 +6,7 @@ import Lodash from 'lodash';
 
 class SearchBar extends Component {
 
-  search(event) {
+  search = (event) => {
     const delayEvent = _.debounce((term) => {
       // this.props.getSearch(event.target.value);
       // this.props.getSearch(term);

@@ -7,12 +7,12 @@ import Results from './results';
 
 class Filter extends Component {
 
-  componentWillMount() {
+  componentWillMount = () => {
     this.props.getCertificates();
     this.props.getGenres();
   }
 
-  genreEvent(event, genreID) {
+  genreEvent = (event, genreID) => {
     if (event.target.checked === true) {
       this.props.addSelectedGenre(genreID);
     } else {
@@ -20,7 +20,7 @@ class Filter extends Component {
     }
   }
 
-  renderGenres() {
+  renderGenres = () => {
     if (this.props.allGenres.genres) {
       return (
         <div className="genres">
@@ -46,13 +46,13 @@ class Filter extends Component {
     }
   }
 
-  certificateEvent(event, certificate) {
+  certificateEvent = (event, certificate) => {
     if (event.target.checked === true) {
       this.props.addSelectedCertificate(certificate);
     }
   }
 
-  renderCertificates () {
+  renderCertificates = () => {
     if (this.props.allCertificates) {
       return (
         <div className="certificates">
@@ -89,7 +89,7 @@ class Filter extends Component {
     }
   }
 
-  submitSearch() {
+  submitSearch = () => {
     var certificate = this.props.selectedCertificate;
     var genres = this.props.selectedGenres.join();
 
@@ -103,7 +103,7 @@ class Filter extends Component {
         {this.renderGenres()}
         <div className="searchButton">
           <button
-            onClick={this.submitSearch.bind(this)}>
+            onClick={this.submitSearch()}>
           Search</button>
         </div>
         <Results />
