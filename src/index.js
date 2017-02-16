@@ -7,7 +7,9 @@ import reducers from './reducers';
 import routes from './routes';
 import promise from 'redux-promise';
 import thunk from 'redux-thunk';
+import 'whatwg-fetch';
 
+const fetch = window.fetch.bind(window);
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const createStoreWithMiddleware = createStore(reducers, composeEnhancers(
   applyMiddleware(promise, thunk)
