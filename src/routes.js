@@ -10,9 +10,10 @@ import FilterGenres from './containers/filter_genres';
 
 export default (
   <Route path="/" component={App} >
-    <IndexRoute component={Filter} />
-    <Route path="filter/certificates" component={FilterCertificates} />
+    <IndexRoute component={FilterCertificates} />
+    // <Route path="filter/certificates" component={FilterCertificates} />
     <Route path="filter/genres" component={FilterGenres} />
+    <Route path="filter" component={Filter} />
     <Route path="results" component={Results} />
   </Route>
 );

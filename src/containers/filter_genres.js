@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getGenres, addSelectedGenre, removeSelectedGenre } from '../actions/actions_filter';
+import { Link } from 'react-router';
 
 class FilterGenres extends Component {
 
@@ -45,13 +46,9 @@ class FilterGenres extends Component {
 
   render() {
     return (
-      <div className="filter">
+      <div className="filterGenres">
         {this.renderGenres()}
-        <div className="searchButton">
-          <button
-            onClick={this.submitSearch}>
-          Search</button>
-        </div>
+        <Link to="/filter">Next</Link>
       </div>
     )
   }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getCertificates, addSelectedCertificate } from '../actions/actions_filter';
+import { Link } from 'react-router';
 
 class FilterCertificates extends Component {
 
@@ -54,13 +55,9 @@ class FilterCertificates extends Component {
 
   render() {
     return (
-      <div className="filter">
+      <div className="filterCertificates">
         {this.renderCertificates()}
-        <div className="searchButton">
-          <button
-            onClick={this.submitSearch}>
-          Search</button>
-        </div>
+        <Link to="/filter/genres">Next</Link>
       </div>
     )
   }

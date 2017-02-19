@@ -1,17 +1,17 @@
-.filter .certificates .certificate {
+.certificates .certificate {
   height: 40px; }
-  .filter .certificates .certificate input[type="radio"] {
+  .certificates .certificate input[type="radio"] {
     display: none; }
-    .filter .certificates .certificate input[type="radio"]:checked + .radioButton .radioButtonSelect {
+    .certificates .certificate input[type="radio"]:checked + .radioButton .radioButtonSelect {
       left: 24px;
       background-color: #26ca28; }
-  .filter .certificates .certificate .radioButton {
+  .certificates .certificate .radioButton {
     width: 45px;
     height: 25px;
     background-color: #A8AAC1;
     border-radius: 50px;
     display: inline-block; }
-    .filter .certificates .certificate .radioButton .radioButtonSelect {
+    .certificates .certificate .radioButton .radioButtonSelect {
       position: relative;
       top: 4px;
       left: 3px;
@@ -21,16 +21,17 @@
       border-radius: 10px;
       background-color: #6C788A;
       transition: left .25s, background-color .25s; }
-  .filter .certificates .certificate label {
+  .certificates .certificate label {
     cursor: pointer; }
-  .filter .certificates .certificate .label {
+  .certificates .certificate .label {
     vertical-align: super;
     margin-left: 5px; }
-.filter .genres .genre input[type="checkbox"] {
+
+.genres .genre input[type="checkbox"] {
   display: none; }
-  .filter .genres .genre input[type="checkbox"]:checked + .checkbox .checkboxSelect {
+  .genres .genre input[type="checkbox"]:checked + .checkbox .checkboxSelect {
     background-color: #26ca28; }
-.filter .genres .genre .checkbox {
+.genres .genre .checkbox {
   display: inline-block;
   width: 40px;
   height: 40px;
@@ -38,7 +39,7 @@
   border-radius: 100%;
   position: relative;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5); }
-  .filter .genres .genre .checkbox .checkboxSelect {
+  .genres .genre .checkbox .checkboxSelect {
     display: inline-block;
     width: 30px;
     height: 30px;
@@ -51,9 +52,9 @@
     z-index: 2;
     background: #6C788A;
     box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.5); }
-.filter .genres .genre label {
+.genres .genre label {
   cursor: pointer; }
-.filter .genres .genre .label {
+.genres .genre .label {
   position: relative;
   top: -25px;
   right: -50px; }
