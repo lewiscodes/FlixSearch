@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
 import { bindActionCreators } from 'redux';
 import { getCertificates, addSelectedCertificate } from '../actions/actions_filter';
-import { Link } from 'react-router';
+import RadioButton from '../components/radiobutton';
 
 class FilterCertificates extends Component {
 
@@ -20,32 +21,20 @@ class FilterCertificates extends Component {
     if (this.props.allCertificates) {
       return (
         <div className="certificates">
-          <div className="certificate">
-            <input
-              type="radio"
-              name="certificate"
-              id="All"
-              onChange={(event) => {this.certificateEvent(event, "All")}}
-            />
-            <label htmlFor="All" className="radioButton">
-              <label htmlFor="All" className="radioButtonSelect"></label>
-            </label>
-            <label className="label" htmlFor="All">All</label>
-          </div>
+          <RadioButton
+            mainClass="certificate"
+            name="All"
+            key="All"
+            changeEvent={this.certificateEvent}
+          />
           {this.props.allCertificates.map((item) => {
             return (
-              <div className="certificate" key={item.certification}>
-                <input
-                  type="radio"
-                  name="certificate"
-                  id={item.certification}
-                  onChange={(event) => {this.certificateEvent(event, item.certification)}}
-                />
-                <label htmlFor={item.certification} className="radioButton">
-                  <label htmlFor={item.certification} className="radioButtonSelect"></label>
-                </label>
-                <label className="label" htmlFor={item.certification}>{item.certification}</label>
-              </div>
+              <RadioButton
+                mainClass="certificate"
+                name={item.certification}
+                key={item.certification}
+                changeEvent={this.certificateEvent}
+              />
             );
           })}
         </div>

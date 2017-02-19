@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
 import { bindActionCreators } from 'redux';
 import { getGenres, addSelectedGenre, removeSelectedGenre } from '../actions/actions_filter';
-import { Link } from 'react-router';
+import Checkbox from '../components/checkbox';
 
 class FilterGenres extends Component {
 
@@ -24,19 +25,12 @@ class FilterGenres extends Component {
         <div className="genres">
           {this.props.allGenres.genres.map((item) => {
             return (
-              <div className="genre" key={item.id}>
-                <input
-                  type="checkbox"
-                  name="genre"
-                  id={item.name}
-                  value={item.id}
-                  onChange={(event) => {this.genreEvent(event, item.id)}}
-                />
-                <label className="checkbox" htmlFor={item.name}>
-                  <label className="checkboxSelect" htmlFor={item.name}></label>
-                  <label className="label" htmlFor={item.name}>{item.name}</label>
-                </label>
-              </div>
+              <Checkbox
+                name={item.name}
+                id={item.id}
+                key={item.id}
+                changeEvent={this.genreEvent}
+              />
             )
           })}
         </div>
