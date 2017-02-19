@@ -45,40 +45,38 @@ body {
   margin: auto;
   width: 66%; }
 
-.certificates .certificate {
-  height: 40px; }
-  .certificates .certificate input[type="radio"] {
-    display: none; }
-    .certificates .certificate input[type="radio"]:checked + .radioButton .radioButtonSelect {
-      left: 24px;
-      background-color: #26ca28; }
-  .certificates .certificate .radioButton {
-    width: 45px;
-    height: 25px;
-    background-color: #A8AAC1;
-    border-radius: 50px;
-    display: inline-block; }
-    .certificates .certificate .radioButton .radioButtonSelect {
-      position: relative;
-      top: 4px;
-      left: 3px;
-      width: 17px;
-      height: 17px;
-      display: block;
-      border-radius: 10px;
-      background-color: #6C788A;
-      transition: left .25s, background-color .25s; }
-  .certificates .certificate label {
-    cursor: pointer; }
-  .certificates .certificate .label {
-    vertical-align: super;
-    margin-left: 5px; }
-
-.genres .genre input[type="checkbox"] {
+.radiobuttons .radiobutton input[type="radio"] {
   display: none; }
-  .genres .genre input[type="checkbox"]:checked + .checkbox .checkboxSelect {
+  .radiobuttons .radiobutton input[type="radio"]:checked + .fakeRadioButton .fakeRadioButtonSelect {
+    left: 24px;
     background-color: #26ca28; }
-.genres .genre .checkbox {
+.radiobuttons .radiobutton .fakeRadioButton {
+  width: 45px;
+  height: 25px;
+  background-color: #A8AAC1;
+  border-radius: 50px;
+  display: inline-block; }
+  .radiobuttons .radiobutton .fakeRadioButton .fakeRadioButtonSelect {
+    position: relative;
+    top: 4px;
+    left: 3px;
+    width: 17px;
+    height: 17px;
+    display: block;
+    border-radius: 10px;
+    background-color: #6C788A;
+    transition: left .25s, background-color .25s; }
+.radiobuttons .radiobutton label {
+  cursor: pointer; }
+.radiobuttons .radiobutton .label {
+  vertical-align: super;
+  margin-left: 5px; }
+
+.checkboxes .checkbox input[type="checkbox"] {
+  display: none; }
+  .checkboxes .checkbox input[type="checkbox"]:checked + .fakeCheckbox .fakeCheckboxSelect {
+    background-color: #26ca28; }
+.checkboxes .checkbox .fakeCheckbox {
   display: inline-block;
   width: 40px;
   height: 40px;
@@ -86,7 +84,7 @@ body {
   border-radius: 100%;
   position: relative;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5); }
-  .genres .genre .checkbox .checkboxSelect {
+  .checkboxes .checkbox .fakeCheckbox .fakeCheckboxSelect {
     display: inline-block;
     width: 30px;
     height: 30px;
@@ -99,9 +97,9 @@ body {
     z-index: 2;
     background: #6C788A;
     box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.5); }
-.genres .genre label {
+.checkboxes .checkbox label {
   cursor: pointer; }
-.genres .genre .label {
+.checkboxes .checkbox .label {
   position: relative;
   top: -25px;
   right: -50px; }

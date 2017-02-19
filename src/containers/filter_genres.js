@@ -22,10 +22,11 @@ class FilterGenres extends Component {
   renderGenres = () => {
     if (this.props.allGenres.genres) {
       return (
-        <div className="genres">
+        <div className="checkboxes genres">
           {this.props.allGenres.genres.map((item) => {
             return (
               <Checkbox
+                mainClass="genre"
                 name={item.name}
                 id={item.id}
                 key={item.id}

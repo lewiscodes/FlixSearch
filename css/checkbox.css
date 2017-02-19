@@ -1,0 +1,33 @@
+.checkboxes .checkbox input[type="checkbox"] {
+  display: none; }
+  .checkboxes .checkbox input[type="checkbox"]:checked + .fakeCheckbox .fakeCheckboxSelect {
+    background-color: #26ca28; }
+.checkboxes .checkbox .fakeCheckbox {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: #A8AAC1;
+  border-radius: 100%;
+  position: relative;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5); }
+  .checkboxes .checkbox .fakeCheckbox .fakeCheckboxSelect {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    transition: all .5s ease;
+    cursor: pointer;
+    position: relative;
+    top: 5px;
+    left: 5px;
+    z-index: 2;
+    background: #6C788A;
+    box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.5); }
+.checkboxes .checkbox label {
+  cursor: pointer; }
+.checkboxes .checkbox .label {
+  position: relative;
+  top: -25px;
+  right: -50px; }
+
+/*# sourceMappingURL=checkbox.css.map */

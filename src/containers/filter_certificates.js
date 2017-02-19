@@ -20,7 +20,7 @@ class FilterCertificates extends Component {
   renderCertificates = () => {
     if (this.props.allCertificates) {
       return (
-        <div className="certificates">
+        <div className="radiobuttons certificates">
           <RadioButton
             mainClass="certificate"
             name="All"
