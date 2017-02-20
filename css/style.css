@@ -1,31 +1,21 @@
 @import url("http://fonts.googleapis.com/css?family=Lato");
 body {
   font-family: 'Lato', sans-serif;
-  background-image: url("../img/2.jpg");
+  background-color: black;
   background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 100vh; }
+  background-repeat: no-repeat; }
 
 .backgroundImage1 {
-  background-image: url("../img/1.jpg");
-  background-size: cover;
-  background-repeat: no-repeat; }
+  background-image: url("../img/background_1.jpg"); }
 
 .backgroundImage2 {
-  background-image: url("../img/2.jpg");
-  background-size: cover;
-  background-repeat: no-repeat; }
+  background-image: url("../img/background_2.jpg"); }
 
 .backgroundImage3 {
-  background-image: url("../img/3.jpg");
-  background-size: cover;
-  background-repeat: no-repeat; }
+  background-image: url("../img/background_3.jpg"); }
 
 .backgroundImage4 {
-  background-image: url("../img/4.jpg");
-  background-size: cover;
-  background-repeat: no-repeat; }
+  background-image: url("../img/background_4.jpg"); }
 
 .tile {
   box-shadow: 2px 2px 4px 5px #ccc;
@@ -79,7 +69,7 @@ body {
   -webkit-transform: translate(-50%, -50%);
   padding: 60px 60px;
   color: white;
-  background-color: rgba(0, 0, 0, 0.4); }
+  background-color: rgba(0, 0, 0, 0.5); }
   .filterCertificates .certificates .certificate {
     font-size: 200%; }
   .filterCertificates a {
@@ -107,11 +97,11 @@ body {
     display: none; }
     .radiobuttons .radiobutton input[type="radio"]:checked + .fakeRadioButton .fakeRadioButtonSelect {
       left: 24px;
-      background-color: #c0392b; }
+      background-color: #3498db; }
   .radiobuttons .radiobutton .fakeRadioButton {
     width: 45px;
     height: 25px;
-    background-color: #A8AAC1;
+    background-color: gray;
     border-radius: 50px;
     display: inline-block;
     vertical-align: middle; }
@@ -123,13 +113,13 @@ body {
       height: 17px;
       display: block;
       border-radius: 10px;
-      background-color: #6C788A;
+      background-color: #333333;
       transition: left .25s, background-color .25s; }
   .radiobuttons .radiobutton label {
     cursor: pointer; }
   .radiobuttons .radiobutton .label {
     vertical-align: middle;
-    margin-left: 5px; }
+    margin-left: 20px; }
 
 .checkboxes .checkbox input[type="checkbox"] {
   display: none; }

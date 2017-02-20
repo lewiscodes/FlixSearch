@@ -8,6 +8,8 @@ import RadioButton from '../components/radiobutton';
 class FilterCertificates extends Component {
 
   componentWillMount = () => {
+    var randomNumber = Math.floor(Math.random() * 4) + 1;
+    document.body.classList.add('backgroundImage' + randomNumber);
     this.props.getCertificates();
   }
 

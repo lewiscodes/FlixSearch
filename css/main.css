@@ -1,29 +1,19 @@
 body {
   font-family: 'Lato', sans-serif;
-  background-image: url("../img/2.jpg");
+  background-color: black;
   background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 100vh; }
+  background-repeat: no-repeat; }
 
 .backgroundImage1 {
-  background-image: url("../img/1.jpg");
-  background-size: cover;
-  background-repeat: no-repeat; }
+  background-image: url("../img/background_1.jpg"); }
 
 .backgroundImage2 {
-  background-image: url("../img/2.jpg");
-  background-size: cover;
-  background-repeat: no-repeat; }
+  background-image: url("../img/background_2.jpg"); }
 
 .backgroundImage3 {
-  background-image: url("../img/3.jpg");
-  background-size: cover;
-  background-repeat: no-repeat; }
+  background-image: url("../img/background_3.jpg"); }
 
 .backgroundImage4 {
-  background-image: url("../img/4.jpg");
-  background-size: cover;
-  background-repeat: no-repeat; }
+  background-image: url("../img/background_4.jpg"); }
 
 /*# sourceMappingURL=main.css.map */

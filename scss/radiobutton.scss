@@ -1,3 +1,7 @@
+$mainColor: black;
+$darkColor: hsla(0, 0, 20%, 1);
+$lightColor: hsla(0, 0, 50%, 1);
+
 .radiobuttons {
   .radiobutton {
     display: inline-block;
@@ -8,14 +12,14 @@
       display: none;
       &:checked + .fakeRadioButton .fakeRadioButtonSelect {
         left: 24px;
-        background-color: #c0392b;
+        background-color: #3498db;
       }
     }
 
     .fakeRadioButton {
       width: 45px;
       height: 25px;
-      background-color: #A8AAC1;
+      background-color: $lightColor;
       border-radius: 50px;
       display: inline-block;
       vertical-align: middle;
@@ -28,7 +32,7 @@
         height: 17px;
         display: block;
         border-radius: 10px;
-        background-color: #6C788A;
+        background-color: $darkColor;
         transition: left .25s, background-color .25s;
       }
     }
@@ -39,7 +43,7 @@
 
     .label {
       vertical-align: middle;
-      margin-left: 5px;
+      margin-left: 20px;
     }
 
   }
