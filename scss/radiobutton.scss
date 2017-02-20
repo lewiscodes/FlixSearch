@@ -1,10 +1,14 @@
 .radiobuttons {
   .radiobutton {
+    display: inline-block;
+    float: left;
+    clear: both;
+
     input[type="radio"] {
       display: none;
       &:checked + .fakeRadioButton .fakeRadioButtonSelect {
         left: 24px;
-        background-color: #26ca28;
+        background-color: #c0392b;
       }
     }
 
@@ -14,6 +18,7 @@
       background-color: #A8AAC1;
       border-radius: 50px;
       display: inline-block;
+      vertical-align: middle;
 
       .fakeRadioButtonSelect {
         position: relative;
@@ -33,7 +38,7 @@
     }
 
     .label {
-      vertical-align: super;
+      vertical-align: middle;
       margin-left: 5px;
     }
 

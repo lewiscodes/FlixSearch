@@ -1,3 +1,32 @@
 body {
   font-family: 'Lato', sans-serif;
+  background-image: url("../img/2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+
+.backgroundImage1 {
+  background-image: url("../img/1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.backgroundImage2 {
+  background-image: url("../img/2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.backgroundImage3 {
+  background-image: url("../img/3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.backgroundImage4 {
+  background-image: url("../img/4.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
