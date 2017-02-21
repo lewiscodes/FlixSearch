@@ -1,5 +1,4 @@
 .filterCertificates {
-  display: inline-block;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -10,14 +9,11 @@
   background-color: rgba(0,0,0,0.5);
 
   .certificates {
+    max-width: 130px;
+    margin: 0 auto;
     .certificate {
       font-size: 200%;
     }
-  }
-
-  a {
-    clear: both;
-    display: block;
   }
 }
 
@@ -34,9 +30,26 @@
       font-size: 200%;
     }
   }
+}
 
-  a {
-    clear: both;
-    display: block;
+.nextButton {
+  clear: both;
+  display: block;
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+  text-align: center;
+  padding: 13px 28px;
+  border: 2px solid white;
+  position: relative;
+  top: 30px;
+  min-width: 120px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: transparent;
+  transition: background-color .15s ease-out;
+  &:hover {
+    color: $mainColor;
+    background: white;
   }
 }

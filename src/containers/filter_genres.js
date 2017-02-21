@@ -43,7 +43,7 @@ class FilterGenres extends Component {
     return (
       <div className="filterGenres">
         {this.renderGenres()}
-        <Link to="/filter">Next</Link>
+        <Link className="nextButton" to="/filter">Next</Link>
       </div>
     )
   }

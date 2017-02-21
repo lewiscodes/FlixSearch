@@ -48,7 +48,7 @@ class FilterCertificates extends Component {
     return (
       <div className="filterCertificates">
         {this.renderCertificates()}
-        <Link to="/filter/genres">Next</Link>
+        <Link className="nextButton" to="/filter/genres">Next</Link>
       </div>
     )
   }

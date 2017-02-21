@@ -1,7 +1,3 @@
-$mainColor: black;
-$darkColor: hsla(0, 0, 20%, 1);
-$lightColor: hsla(0, 0, 50%, 1);
-
 .radiobuttons {
   .radiobutton {
     display: inline-block;
@@ -12,7 +8,7 @@ $lightColor: hsla(0, 0, 50%, 1);
       display: none;
       &:checked + .fakeRadioButton .fakeRadioButtonSelect {
         left: 24px;
-        background-color: #3498db;
+        background-color: $primaryColor;
       }
     }
 

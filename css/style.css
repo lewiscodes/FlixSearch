@@ -61,7 +61,6 @@ body {
   width: 66%; }
 
 .filterCertificates {
-  display: inline-block;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -70,11 +69,11 @@ body {
   padding: 60px 60px;
   color: white;
   background-color: rgba(0, 0, 0, 0.5); }
-  .filterCertificates .certificates .certificate {
-    font-size: 200%; }
-  .filterCertificates a {
-    clear: both;
-    display: block; }
+  .filterCertificates .certificates {
+    max-width: 130px;
+    margin: 0 auto; }
+    .filterCertificates .certificates .certificate {
+      font-size: 200%; }
 
 .filterGenres {
   display: inline-block;
@@ -85,9 +84,26 @@ body {
   -webkit-transform: translate(-50%, -50%); }
   .filterGenres .genres .genre {
     font-size: 200%; }
-  .filterGenres a {
-    clear: both;
-    display: block; }
+
+.nextButton {
+  clear: both;
+  display: block;
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+  text-align: center;
+  padding: 13px 28px;
+  border: 2px solid white;
+  position: relative;
+  top: 30px;
+  min-width: 120px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: transparent;
+  transition: background-color .15s ease-out; }
+  .nextButton:hover {
+    color: black;
+    background: white; }
 
 .radiobuttons .radiobutton {
   display: inline-block;
