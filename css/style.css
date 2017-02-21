@@ -3,7 +3,9 @@ body {
   font-family: 'Lato', sans-serif;
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: black; }
+  background-attachment: fixed;
+  background-color: black;
+  background-position: center; }
 
 .backgroundBody .backgroundOverlay {
   opacity: 0; }
