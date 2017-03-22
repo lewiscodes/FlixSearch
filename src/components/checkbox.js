@@ -12,8 +12,8 @@ export default (props) => {
       />
       <label className="fakeCheckbox" htmlFor={props.name}>
         <label className="fakeCheckboxSelect" htmlFor={props.name}></label>
-        <label className="label" htmlFor={props.name}>{props.name}</label>
       </label>
+      <label className="label" htmlFor={props.name}>{props.name}</label>
     </div>
   )
 }

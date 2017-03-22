@@ -10,7 +10,7 @@ class FilterCertificates extends Component {
   componentWillMount = () => {
     this.props.getCertificates();
 
-    var randomNumber = Math.floor(Math.random() * 4) + 1;
+    var randomNumber = Math.floor(Math.random() * 3) + 1;
     var image = new Image();
     image.onload = () => {
       window.document.body.background = image.src;
